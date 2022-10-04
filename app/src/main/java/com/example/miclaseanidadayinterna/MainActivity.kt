@@ -1,12 +1,10 @@
 package com.example.miclaseanidadayinterna
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.EditText
-import android.widget.RadioButton
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 
 class MainActivity : AppCompatActivity() {
     var etn_valor1:EditText?=null
@@ -63,13 +61,41 @@ class MainActivity : AppCompatActivity() {
     }else{
         Toast.makeText(this, "No puede dividir entre 0",Toast.LENGTH_LONG).show()
         }
-    }
-    /*private fun claseAnidadasyInternas(){
-        val miClaseAnidada = miClaseAnidadayInterna.miClaseAnidada()
-        val sumarDosNum = miClaseAnidada.suma(n1=5,n2=6)
-        println("El resultado de la suma es $sumarDosNum")
 
+    }
+    /*
+    private fun claseAnidadasyInternas (){
+
+        //Clase anidada (nested class)
+        val miClaseAnidada = miClaseAnidadayInterna.miClaseInterna()
+        val sumarDosNumeros = miClaseAnidada.suma(n1 = 21, n2 = 19)
+        println("El resultado de la suma es $sumarDosNumeros")
+
+
+        //Clase interna
+        val miClaseInterna1 = miClaseAnidadayInterna().miClaseInterna()
+        val  sumarDos = miClaseInterna1.sumarDos(4)
+        println("El resultado de la suma dos es $sumarDos")
+    }
+
+
+    fun Calculadora (vista:View){
+
+
+        val valor1_String = etn_valor1?.text.toString()
+        val valor2_String = etn_Valor2.text.toString()
+
+        val valor1_Int = valor1_String.toInt()
+        val valor2_Int = Integer.parseInt(valor2_String)
+
+        val suma = valor1_Int+valor2_Int
+        val resultado = suma.toString()
+        tv_Resultado.setText(resultado)
     }*/
+    fun btnNextPages(Vista: View){
+        val  NextPages: Intent = Intent(applicationContext,listview::class.java)
+        startActivity(NextPages)
+    }
 }
 
 
